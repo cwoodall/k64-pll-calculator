@@ -1,6 +1,7 @@
 from pll_solver import PLLSolver
 from unittest import TestCase
 from z3 import *
+
 class TestPLLSolver(TestCase):
     def setUp(self):
         self.p = PLLSolver()

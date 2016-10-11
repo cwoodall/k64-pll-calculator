@@ -13,9 +13,7 @@ starting_dir=$PWD
 
 setup_venv () {
   # Create a virtual env if one doesn't exist
-  if [ ! -d venv ]; then
-    virtualenv --python=python2.7 venv
-  fi
+  virtualenv --python=python2.7 venv
   source ./venv/bin/activate
 }
 
@@ -33,13 +31,29 @@ get_z3 () {
 
 test_z3 () {
   cd $starting_dir;
-  # You will find Z3 and the Python bindings installed in the virtual environment
-  venv/bin/z3 -h
 
   # Check python bindings
   python -c 'import z3; print(z3.get_version_string())'
 }
 
+make_install() {
+  cd z3/build;
+  make install
+}
+
 setup_venv
-get_z3
-test_z3
+
+if [ -d z3 ]; then
+  echo "Trying to install z3"
+  trap make_install EXIT
+else
+  echo "Fetching z3"
+  get_z3
+fi
+
+cd $starting_dir
+# if [ ! -f venv/bin/z3 ]; then
+#   test_z3
+# else
+#   echo "Skipping. z3 is already installed"
+# fi
