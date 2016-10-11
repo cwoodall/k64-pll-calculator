@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 ##
 # Call with source:
-#   $ . ./get-z3.sh
+#   $ . ./get-z3-from-source.sh
 #
 # Requires:
 #  - python
