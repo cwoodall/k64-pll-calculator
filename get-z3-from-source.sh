@@ -52,8 +52,3 @@ else
 fi
 
 cd $starting_dir
-# if [ ! -f venv/bin/z3 ]; then
-#   test_z3
-# else
-#   echo "Skipping. z3 is already installed"
-# fi
