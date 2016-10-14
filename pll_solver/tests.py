@@ -31,7 +31,7 @@ class TestPLLSolver(TestCase):
 
     def test_pll_solver_returns_model_string(self):
         assert str(self.p) == str(None)
-        assert self.p.solve(24e6, 120e6) == None
+        assert self.p.solve(24e6, 120e6) == self.p.model
         assert self.p.model != None
         assert str(self.p) == str(self.p.model)
 
