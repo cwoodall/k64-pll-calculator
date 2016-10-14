@@ -68,6 +68,7 @@ class PLLSolver(object):
 
         self.model = solve_return_model(facts)
 
+        return self.model
     def __str__(self):
         """
         String representation of model
