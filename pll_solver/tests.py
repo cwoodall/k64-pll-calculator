@@ -1,6 +1,18 @@
 from pll_solver import PLLSolver
+from pll_solver.scripts.cli import get_verbosity_level
 from unittest import TestCase
 from z3 import *
+
+
+class TestCLI(TestCase):
+    def test_get_verbosity_level(self):
+        import logging
+        assert (get_verbosity_level(0) == logging.CRITICAL)
+        assert (get_verbosity_level(1) == logging.ERROR)
+        assert (get_verbosity_level(2) == logging.WARNING)
+        assert (get_verbosity_level(3) == logging.INFO)
+        assert (get_verbosity_level(4) == logging.DEBUG)
+        assert (get_verbosity_level(5) == logging.NOTSET)
 
 class TestPLLSolver(TestCase):
     def setUp(self):
@@ -42,6 +54,15 @@ class TestPLLSolver(TestCase):
         assert self.p['f_in'] == 24e6
         assert self.p['f_out'] == 120e6
 
+    def test_pll_solver_serialize(self):
+        assert self.p.serialize() == {}
+        self.p.solve(24e6, 120e6)
+        self.p.serialize() == {
+            "d": str(6),
+            "m": str(30),
+            "f_in": str(int(24e6)),
+            "f_out": str(int(120e6))
+        }
     def test_pll_solver_impossible_solution(self):
         try:
             self.p.solve(24e6, -1)

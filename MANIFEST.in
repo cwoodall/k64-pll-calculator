@@ -1,0 +1,2 @@
+recursive-include pll_solver/web/templates *
+recursive-include pll_solver/web/static *

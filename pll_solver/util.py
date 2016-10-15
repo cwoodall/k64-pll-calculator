@@ -19,8 +19,8 @@ def solve_return_model(fact_list):
     s.add(*fact_list)
     r = s.check()
     if r == unsat:
-        logger.critical("no solution")
+        logger.debug("no solution")
     elif r == unknown:
-        logger.critical("failed to solve")
+        logger.debug("failed to solve")
 
     return s.model()

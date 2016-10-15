@@ -38,6 +38,11 @@ class PLLSolver(object):
         """
         return self.model[self.params[k]]
 
+    def serialize(self):
+        if self.model:
+            return {k: str(self.model[v]) for k,v in self.params.items()}
+        else:
+            return {}
     def solve(self, freq_in, freq_out=120e6, divide_range=(2e6, 4e6),
               d_range=(1, 25), m_range=(24, 55)):
         """
