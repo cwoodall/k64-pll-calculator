@@ -9,7 +9,9 @@ before_script:
   - "pip install virtualenv nose"
   - cd $TRAVIS_BUILD_DIR
 script:
-  - nosetests
+  - . ./venv/bin/activate
+  - ./setup.py install
+  - ./setup.py test
 cache:
   directories:
     - venv
