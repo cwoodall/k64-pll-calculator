@@ -147,5 +147,5 @@ $ heroku buildpacks:set https://github.com/lawrencejones/heroku-buildpack-z3
 You also will need to re-add the python buildpack:
 
 ```
-heroku create --buildpack heroku/python
+$ heroku buildpacks:set heroku/python
 ```
