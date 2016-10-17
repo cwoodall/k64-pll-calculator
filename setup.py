@@ -18,9 +18,11 @@ class SetupHerokuCommand(Command):
     def run(self):
         """runner"""
         try:
+            ret = subprocess.call("heroku buildpacks:set heroku/python", shell=True)
             ret = subprocess.call(
-                "heroku buildpacks:set https://github.com/cwoodall/heroku-buildpack-z3",shell=True)
-            ret = subprocess.call("heroku buildpacks:add heroku/python", shell=True)
+                "heroku buildpacks:add https://github.com/cwoodall/heroku-buildpack-z3-python",shell=True)
+            ret = subprocess.call(
+                "heroku buildpacks",shell=True)
             print("success")
         except Exception as e:
             print(e)
@@ -51,6 +53,5 @@ setup(
         [console_scripts]
         pll_solver=pll_solver.scripts.cli:cli
         pll_solver_web=pll_solver.scripts.launchserver:main
-
     ''',
 )
