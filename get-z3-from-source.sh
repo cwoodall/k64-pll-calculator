@@ -22,7 +22,7 @@ get_z3 () {
   git clone $z3_git_repo;
 
   cd z3;
-  python scripts/mk_make.py --python
+  python scripts/mk_make.py --python --staticlib
   cd build;
   make
   make install
