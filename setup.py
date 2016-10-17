@@ -19,7 +19,7 @@ class SetupHerokuCommand(Command):
         """runner"""
         try:
             ret = subprocess.call(
-                "heroku buildpacks:set https://github.com/lawrencejones/heroku-buildpack-z3",shell=True)
+                "heroku buildpacks:set https://github.com/cwoodall/heroku-buildpack-z3",shell=True)
             ret = subprocess.call("heroku buildpacks:add heroku/python", shell=True)
             print("success")
         except Exception as e:
