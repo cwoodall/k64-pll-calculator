@@ -1,1 +1,1 @@
-web: gunicorn pll_solver.scripts.launchserver:main --log-file -
+web: gunicorn pll_solver.web:app --log-file -

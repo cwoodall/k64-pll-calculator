@@ -12,6 +12,7 @@
 - [Usage](#usage)
 	- [CLI](#cli)
 	- [Web Api](#web-api)
+- [Z3 for Heroku](#z3-for-heroku)
 
 <!-- /TOC -->
 
@@ -133,3 +134,12 @@ $ curl "localhost:5000/solve?fin=24e6&fout=80e6"
 ```
 
 For more information please see the <a href="#">writeup</a>
+
+
+## Z3 for Heroku
+
+Use this [heroku buildpack for z3](https://github.com/lawrencejones/heroku-buildpack-z3) by
+
+```
+$ heroku buildpacks:set https://github.com/lawrencejones/heroku-buildpack-z3
+```

@@ -8,8 +8,14 @@ setup(
     include_package_data=True,
     install_requires=[
         'click==6.6',
+        'Flask==0.11.1',
+        'gunicorn==19.6.0',
+        'itsdangerous==0.24',
+        'Jinja2==2.8',
+        'MarkupSafe==0.23',
         'nose==1.3.7',
-        'flask'
+        'nosetests-json-extended==0.1.0',
+        'Werkzeug==0.11.11',
     ],
     zip_safe=False,
     test_suite='nose.collector',
