@@ -48,21 +48,22 @@ high performance theorem prover. There is both a commandline interface and a web
 
 *Requires*: Python 2.7
 
-This requires z3 be installed with python bindings. The recomended way of doing this is to run `./get-z3-from-source.sh` which will make a virtualenv for you. The following should install z3:
+All requirements are managemed by the setup.py file and the application can be installed by running:
 
 ```
-$ sudo pip install virtualenv
-$ ./get-z3-from-source.sh
-$ . ./venv/bin/activate
 $ setup.py install
 ```
 
-You should use the venv for working with this
-script.
+To verified it is installed properly you can now run the unit tests:
+
+```
+$ setup.py test
+```
+
+
+This installs `pll_solver` and `pll_solver_web` which can be run from the command line. See the [usage section](#usage) for details.
 
 ## Usage
-
-### CLI
 
 Getting help:
 
@@ -133,19 +134,18 @@ $ curl "localhost:5000/solve?fin=24e6&fout=80e6"
 }
 ```
 
-For more information please see the <a href="#">writeup</a>
-
-
-### Heroku setup
-
-Use this [heroku buildpack for z3](https://github.com/lawrencejones/heroku-buildpack-z3) by
+You can experiment with this [here](http://z3-pll-finder.herokuapp.com/), and use the the solve api at `http://z3-pll-finder.herokuapp.com/solve`. For example, we can repeat the above request:
 
 ```
-$ heroku buildpacks:set https://github.com/lawrencejones/heroku-buildpack-z3
+$ curl "z3-pll-finder.herokuapp.com/solve?fin=24e6&fout=80e6"
+{
+  "payload": {
+    "d": "12",
+    "f_in": "24000000",
+    "f_out": "80000000",
+    "m": "40"
+  },
+  "status": "success"
+}
 ```
-
-You also will need to re-add the python buildpack:
-
-```
-$ heroku buildpacks:add --index 1 heroku/python
-```
+For more information please see the [writeup](#)
