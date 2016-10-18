@@ -25,11 +25,18 @@ setup(
         'Werkzeug==0.11.11',
         'z3-solver==4.4.2.1.post1',
     ],
+    description = 'Calculate your PLL Settings for the K64F12 Series of Processors in Style with Z3 and Python',
+    author = 'Christopher Woodall',
+    author_email = 'chris.j.woodall@gmail.com',
+    url = 'https://github.com/cwoodall/k64-pll-calculator', # use the URL to the github repo
     zip_safe=False,
     test_suite='nose.collector',
     entry_points={
         "console_scripts": [
             "pll_solver=pll_solver.scripts.cli:cli",
             "pll_solver_web=pll_solver.scripts.launchserver:main",
-        ]}
+        ]},
+    
+    keywords = ['electronics', 'firmware', 'utilities', 'calculators', 'z3'], # arbitrary keywords
+    classifiers = [],
 )
