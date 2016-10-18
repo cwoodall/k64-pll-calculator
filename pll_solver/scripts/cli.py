@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import click
-from ..version import __VERSION__
+from ..version import __version__
 from pll_solver import PLLSolver
 import logging
 
@@ -14,7 +14,7 @@ def get_verbosity_level(verbosity):
 @click.option("--freq_in", '-i', help="Input frequency value in Hz", type=float)
 @click.option("--freq_out", '-o', help="Output frequency value in Hz", type=float)
 @click.option("--verbosity", '-v', help="Verbosity of output", count=True)
-@click.version_option(__VERSION__)
+@click.version_option(__version__)
 @click.pass_context
 def cli(ctx, freq_in, freq_out, verbosity):
     """
