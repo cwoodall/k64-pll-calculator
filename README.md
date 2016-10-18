@@ -1,8 +1,7 @@
-# z3-freescale-k64-pll-finder : Calculator for PLL Settings
+# K64 PLL Calculator : 
+> Calculate your PLL Settings for the K64F12 Series of Processors in Style with Z3 and Python
 
-> A python application for finding PLL configurations for Freescale Kinetis K64 Chips
-
-![Travis CI Build Status](https://travis-ci.org/cwoodall/z3-freescale-k64-pll-finder.svg)
+[![Travis CI Build Status](https://travis-ci.org/cwoodall/k64-pll-calculator.svg)](https://travis-ci.org/cwoodall/k64-pll-calculator)
 
 **Table of Contents**
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
@@ -10,9 +9,7 @@
 - [Overview](#overview)
 - [Installing](#installing)
 - [Usage](#usage)
-	- [CLI](#cli)
 	- [Web Api](#web-api)
-	- [Heroku setup](#heroku-setup)
 
 <!-- /TOC -->
 
