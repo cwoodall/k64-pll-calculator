@@ -1,7 +1,7 @@
-# K64 PLL Calculator : 
+# K64 PLL Calculator [![Travis CI Build Status](https://travis-ci.org/cwoodall/k64-pll-calculator.svg)](https://travis-ci.org/cwoodall/k64-pll-calculator)
 > Calculate your PLL Settings for the K64F12 Series of Processors in Style with Z3 and Python
 
-[![Travis CI Build Status](https://travis-ci.org/cwoodall/k64-pll-calculator.svg)](https://travis-ci.org/cwoodall/k64-pll-calculator)
+
 
 **Table of Contents**
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
