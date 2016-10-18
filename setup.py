@@ -1,36 +1,16 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages, Command
-from pll_solver import __VERSION__
-import subprocess
-class SetupHerokuCommand(Command):
-    """Setup heroku for website"""
-    description = "setup heroku command"
-    user_options = []
+from distutils.util import convert_path
 
-    def initialize_options(self):
-        """init options"""
-        pass
+main_ns = {}
+ver_path = convert_path('pll_solver/version.py')
+with open(ver_path) as ver_file:
+    exec(ver_file.read(), main_ns)
 
-    def finalize_options(self):
-        """finalize options"""
-        pass
 
-    def run(self):
-        """runner"""
-        try:
-            ret = subprocess.call("heroku buildpacks:set heroku/python", shell=True)
-            ret = subprocess.call(
-                "heroku buildpacks:add https://github.com/cwoodall/heroku-buildpack-z3-python",shell=True)
-            ret = subprocess.call(
-                "heroku buildpacks",shell=True)
-            print("success")
-        except Exception as e:
-            print(e)
-            print("Failed, please verify the heroku toolbelt is installed. Run `gem install heroku`")
-            exit(1)
 setup(
     name='pll_solver',
-    version=__VERSION__,
+    version=main_ns['__version__'],
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -43,15 +23,13 @@ setup(
         'nose==1.3.7',
         'nosetests-json-extended==0.1.0',
         'Werkzeug==0.11.11',
+        'z3-solver==4.4.2.1.post1',
     ],
     zip_safe=False,
     test_suite='nose.collector',
-    cmdclass={
-        'heroku_setup': SetupHerokuCommand
-    },
-    entry_points='''
-        [console_scripts]
-        pll_solver=pll_solver.scripts.cli:cli
-        pll_solver_web=pll_solver.scripts.launchserver:main
-    ''',
+    entry_points={
+        "console_scripts": [
+            "pll_solver=pll_solver.scripts.cli:cli",
+            "pll_solver_web=pll_solver.scripts.launchserver:main",
+        ]}
 )
