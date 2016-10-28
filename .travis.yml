@@ -3,16 +3,12 @@ python:
   - "2.7"
 # command to run tests
 install:
- - pip install virtualenv
-before_script:
-  - ". ./get-z3-from-source.sh || true"
-  - "pip install virtualenv nose"
-  - cd $TRAVIS_BUILD_DIR
+  - pip install virtualenv
 script:
+  - virtualenv venv
   - . ./venv/bin/activate
   - ./setup.py install
   - ./setup.py test
 cache:
   directories:
     - venv
-    - z3
