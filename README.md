@@ -67,8 +67,8 @@ script.
 Getting help:
 
 ``` shell-session
-$ pll_solver --help
-Usage: pll_solver [OPTIONS]
+$ k64_pll_calculator --help
+Usage: k64_pll_calculator [OPTIONS]
 
   Simple program which takes an input frequency and an output
   frequency and returns the pdiv and vdiv necissary for the pll in
@@ -86,14 +86,14 @@ Options:
 Example of finding some values:
 
 ``` shell-session
-pll_solver -i 24e6 -o 80e6
+k64_pll_calculator -i 24e6 -o 80e6
 [d = 12, m = 40, f_out = 80000000, f_in = 24000000]
 ```
 
 Example of a failure of the model to converge:
 
 ``` shell-session
-$ pll_solver -i 1e6 -o 80e6
+$ k64_pll_calculator -i 1e6 -o 80e6
 No results found.
 ```
 
@@ -102,7 +102,7 @@ No results found.
 A flask web application is also provided which can be run using:
 
 ``` shell-session
-$ pll_solver_web
+$ k64_pll_calculator_web
 ```
 
 After you do this you can go to `localhost:5000` to get the web page. To make

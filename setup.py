@@ -3,13 +3,13 @@ from setuptools import setup, find_packages, Command
 from distutils.util import convert_path
 
 main_ns = {}
-ver_path = convert_path('pll_solver/version.py')
+ver_path = convert_path('k64_pll_calculator/version.py')
 with open(ver_path) as ver_file:
     exec(ver_file.read(), main_ns)
 
 
 setup(
-    name='pll_solver',
+    name='k64_pll_calculator',
     version=main_ns['__version__'],
     packages=find_packages(),
     include_package_data=True,
@@ -29,7 +29,7 @@ setup(
     test_suite='nose.collector',
     entry_points={
         "console_scripts": [
-            "pll_solver=pll_solver.scripts.cli:cli",
-            "pll_solver_web=pll_solver.scripts.launchserver:main",
+            "k64_pll_calculator=k64_pll_calculator.scripts.cli:cli",
+            "k64_pll_calculator_web=k64_pll_calculator.scripts.launchserver:main",
         ]}
 )

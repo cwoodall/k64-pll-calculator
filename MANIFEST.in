@@ -1,2 +1,2 @@
-recursive-include pll_solver/web/templates *
-recursive-include pll_solver/web/static *
+recursive-include k64_pll_calculator/web/templates *
+recursive-include k64_pll_calculator/web/static *

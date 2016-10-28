@@ -1,1 +1,1 @@
-web: gunicorn pll_solver.web:app --log-file -
+web: gunicorn k64_pll_calculator.web:app --log-file -

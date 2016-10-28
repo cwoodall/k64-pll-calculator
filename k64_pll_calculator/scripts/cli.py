@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import click
 from ..version import __version__
-from pll_solver import PLLSolver
+from k64_pll_calculator import PLLSolver
 import logging
 
 logging.basicConfig()
